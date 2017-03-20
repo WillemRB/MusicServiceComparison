@@ -1,0 +1,22 @@
+﻿@model MusicServiceComparison.MusicGatherer.Models.ITunesArtistModel
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="search-results">
+    @if (Model.Results.Any())
+    {
+        <h4>Search Results</h4>
+        <div class="collection">
+            @foreach (var artist in Model.Results)
+                {
+                <a class="collection-item" href="~/artist/itunes/@artist.ArtistId">@artist.ArtistName</a>
+            }
+        </div>
+    }
+    else
+    {
+        <h4>Search returned no results</h4>
+    }
+</div>
+

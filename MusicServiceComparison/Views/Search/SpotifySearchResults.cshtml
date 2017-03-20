@@ -1,0 +1,22 @@
+﻿@model MusicServiceComparison.MusicGatherer.Models.SpotifyArtistModel
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="search-results">
+    @if (Model.Artists.Items.Any())
+    {
+        <h4>Search Results</h4>
+        <div class="collection">
+            @foreach (var artist in Model.Artists.Items)
+                {
+                <a class="collection-item" href="~/artist/spotify/@artist.Id">@artist.Name</a>
+            }
+        </div>
+    }
+    else
+    {
+        <h4>Search returned no results</h4>
+    }
+</div>
+

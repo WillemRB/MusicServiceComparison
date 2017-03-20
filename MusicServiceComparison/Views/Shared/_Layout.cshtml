@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="keywords" content="music album deezer spotify xbox music groove apple itunes @ViewBag.Title" />
+    <meta charset="utf-8" />
+
+    <title>Music Service Availability - @ViewBag.Title</title>
+</head>
+<body>
+    @Html.Partial("_NavigationPartial")
+    <div class="container">
+        @RenderBody()
+    </div>
+    <div class="spacer"></div>
+    @Html.Partial("_FooterPartial")
+</body>
+</html>

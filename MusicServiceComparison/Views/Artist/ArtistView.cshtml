@@ -1,0 +1,71 @@
+﻿@model MusicServiceComparison.Models.ArtistModel
+@{
+    ViewBag.Title = Model.Name;
+}
+
+<div class="artist-content">
+    <div class="col s12 m8 offset-s2 l6 offset-s3 artist-header">
+        <div class="row valign-wrapper">
+            <div class="col s2">
+                @if (string.IsNullOrEmpty(Model.Image))
+                { <img src="https://cdns-images.dzcdn.net/images/artist//250x250-000000-80-0-0.jpg" class="artist-image" height="150" width="150"> }
+                else
+                { <img src="@Model.Image" class="artist-image" height="150" width="150"> }
+            </div>
+            <div class="col s10">
+                <h1>@Model.Name</h1>
+            </div>
+        </div>
+    </div>
+
+    <table class="striped">
+        <thead>
+            <tr>
+                <th colspan="2">Album</th>
+                <th class="center-align service-column">Deezer</th>
+                @*<th class="center-align service-column">Groove</th>*@
+                <th class="center-align service-column">iTunes</th>
+                <th class="center-align service-column">Spotify</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var album in Model.SortedAlbums)
+            {
+                if (!album.Hide)
+                {
+                    <tr>
+                        <td class="album-art center-align"><img src="@album.Art" height="100" width="100"></td>
+                        <td>@album.Name</td>
+                        <td class="center-align">
+                            @if (album.DeezerId != null)
+                            { <div class="material-icons green-text text-accent-4">done</div> }
+                            else
+                            { <div class="material-icons red-text text-darken-3">close</div> }
+                        </td>
+                        @*<td class="center-align">
+                            @if (album.GrooveId != null)
+                            { <div class="material-icons green-text text-accent-4">done</div> }
+                            else
+                            { <div class="material-icons red-text text-darken-3">close</div> }
+                        </td>*@
+                        <td class="center-align">
+                            @if (album.ITunesId != null)
+                            { <div class="material-icons green-text text-accent-4">done</div> }
+                            else
+                            { <div class="material-icons red-text text-darken-3">close</div> }
+                        </td>
+                        <td class="center-align">
+                            @if (album.SpotifyId != null)
+                            { <div class="material-icons green-text text-accent-4">done</div> }
+                            else
+                            { <div class="material-icons red-text text-darken-3">close</div> }
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+    <p class="blue-grey-text text-lighten-4 center-align">Last updated on @Model.LastUpdate.ToShortDateString()</p>
+</div>
