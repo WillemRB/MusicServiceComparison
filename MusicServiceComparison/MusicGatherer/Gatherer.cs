@@ -13,14 +13,11 @@ namespace MusicServiceComparison.MusicGatherer
 
         private readonly DeezerService deezer;
 
-        private readonly GrooveService groove;
-
-        public Gatherer(SpotifyService spotify, ITunesService itunes, DeezerService deezer, GrooveService groove)
+        public Gatherer(SpotifyService spotify, ITunesService itunes, DeezerService deezer)
         {
             this.spotify = spotify;
             this.itunes = itunes;
             this.deezer = deezer;
-            this.groove = groove;
         }
 
         public ArtistModel Update(string name)
