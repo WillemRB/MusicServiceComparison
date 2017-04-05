@@ -162,7 +162,6 @@
     <Compile Include="MusicGatherer\Models\ITunesModels.cs" />
     <Compile Include="MusicGatherer\Models\SpotifyModels.cs" />
     <Compile Include="MusicGatherer\Service\DeezerService.cs" />
-    <Compile Include="MusicGatherer\Service\GrooveService.cs" />
     <Compile Include="MusicGatherer\Service\ITunesService.cs" />
     <Compile Include="MusicGatherer\Service\SpotifyService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

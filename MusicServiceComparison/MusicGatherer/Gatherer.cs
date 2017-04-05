@@ -61,7 +61,6 @@ namespace MusicServiceComparison.MusicGatherer
             itunes.Update(model);
             spotify.Update(model);
             deezer.Update(model);
-            //groove.Update(model);
 
             model.LastUpdate = DateTime.Now;
 
@@ -99,15 +98,6 @@ namespace MusicServiceComparison.MusicGatherer
         /// <returns></returns>
         public static bool Compare(string title1, string title2)
         {
-            // Initial version of compare.
-            //return title1.ToLower() == title2.ToLower();
-
-            // Version 1
-            //var shortest = title1.Length < title2.Length ? title1 : title2;
-            //var longest = title1.Length < title2.Length ? title2 : title1;
-
-            //return longest.ToLower().Contains(shortest.ToLower());
-            
             title1 = title1.ToLower();
             title2 = title2.ToLower();
 

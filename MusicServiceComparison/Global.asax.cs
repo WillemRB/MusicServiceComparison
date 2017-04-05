@@ -35,7 +35,6 @@ namespace MusicServiceComparison
             builder.RegisterInstance(new SpotifyService());
             builder.RegisterInstance(new ITunesService());
             builder.RegisterInstance(new DeezerService());
-            builder.RegisterInstance(new GrooveService());
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
